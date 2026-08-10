@@ -1,0 +1,13 @@
+[Unit]
+Description=GStreamer Video Streaming Service
+After=systemd-modules-load.service local-fs.target
+ 
+[Service]
+Type=simple
+ExecStart=/root/start_stream.sh
+WorkingDirectory=/root
+Restart=always
+RestartSec=5
+ 
+[Install]
+WantedBy=multi-user.target
