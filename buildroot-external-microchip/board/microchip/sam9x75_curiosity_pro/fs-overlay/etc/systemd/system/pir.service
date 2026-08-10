@@ -1,0 +1,11 @@
+[Unit]
+Description=PIR Driver
+ 
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe pir_sensor
+ExecStop=/sbin/rmmod pir_sensor
+ 
+[Install]
+WantedBy=multi-user.target
